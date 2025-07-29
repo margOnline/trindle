@@ -3,6 +3,7 @@
     color: var(--brown-dark);
     text-align: center;
     font-size: var(--h3);
+    margin-bottom: 1rem;
   }
   .page-wrapper {
     max-width: 1000px;
