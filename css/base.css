@@ -1,0 +1,164 @@
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+  [role='list'] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-block-size: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  img,
+  picture {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+:root {
+  --off-white: #eae6e1;
+  --brown: #583b1f;
+  --grey: #c2bfcb;
+  --magenta: #d22381;
+  --cement: #e5e0da;
+  --olive-green: #7e7b46;
+  --yellow: #eed363;
+
+  --text-main: var(--cement);
+  --text-brand: var(--brown);
+  --text-high-contrast: var(--off-white);
+  --background-main: var(--olive-green);
+
+  /* fonts */
+  --ff-heading: 'Marcellus', serif;
+  --ff-body: 'PT Serif', serif;
+  --ff-brand: 'Montserrat', sans-serif;
+
+  /* font scale */
+  --base-size: 1rem;
+  --scale: 1.25;
+  --xl-font-size: calc(var(--lg-font-size) * var(--scale));
+  --lg-font-size: calc(var(--h1) * var(--scale));
+  --h1: calc(var(--h2) * var(--scale));
+  --h2: calc(var(--h3) * var(--scale));
+  --h3: calc(var(--h4) * var(--scale));
+  --h4: calc(var(--h5) * var(--scale));
+  --h5: calc(var(--h6) * var(--scale));
+  --h6: var(--base-size);
+  --sm-font-size: calc(var(--base-size) / var(--scale));
+  --xs-font-size: calc(var(--sm-font-size) / var(--scale));
+
+  @media (width > 760px) {
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 2rem;
+    --fs-800: 3rem;
+    --fs-900: 5rem;
+    --fs-1000: 7.5rem;
+  }
+}
+
+html {
+  font-family: var(--ff-body);
+  line-height: 1.6;
+  scroll-padding: 2rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+body {
+  background-color: var(--background-main);
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-heading);
+  font-weight: 400;
+  line-height: 1.2em;
+}
+h1 {
+  font-size: var(--h1);
+}
+h2 {
+  font-size: var(--h2);
+}
+h3 {
+  font-size: var(--h3);
+}
+h4 {
+  font-size: var(--h4);
+}
+p {
+  font-family: var(--text-main);
+  font-weight: 400;
+  line-height: 1.5em;
+  color: var(--text-main);
+}
+a {
+  color: var(--grey);
+}
+img {
+  border-radius: var(--border-radius-3);
+}
+header {
+  margin: 1rem;
+}
