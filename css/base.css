@@ -105,6 +105,9 @@
   --sm-font-size: calc(var(--base-size) / var(--scale));
   --xs-font-size: calc(var(--sm-font-size) / var(--scale));
 
+  /* other variables */
+  --radius: 5px;
+
   @media (width > 760px) {
     --fs-500: 1.25rem;
     --fs-600: 1.5rem;
@@ -171,15 +174,35 @@ header h3 {
     letter-spacing: 1.2;
     color: var(--brown-dark);
   }
-  nav {
-    grid-column: 2/3;
-    /* grid-row: 1/2; */
-  }
-  nav ul {
+}
+nav {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s, display 1s, translate 0.5s;
+  transition-behavior: allow-discrete;
+  translate: 100% 0;
+  background-color: var(--cement);
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: var(--base-size);
+  border-radius: 0 0 0 var(--radius);
+  z-index: 10;
+  ul {
     display: flex;
-    flex-flow: row wrap;
-    gap: 1rem;
+    flex-direction: column;
     justify-content: space-evenly;
+    padding: 20px;
+  }
+  a {
+    color: var(--brown);
+    text-decoration: none;
+  }
+  li + li {
+    border-top: 1px solid var(--brown);
+    margin-block-start: 1rem;
+    padding-block-start: 1rem;
+    line-height: 1.5rem;
   }
 }
 [aria-controls='primary-nav'] {
