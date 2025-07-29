@@ -74,6 +74,7 @@
 :root {
   --off-white: #eae6e1;
   --brown: #583b1f;
+  --brown-dark: #1f140b;
   --grey: #c2bfcb;
   --magenta: #d22381;
   --cement: #e5e0da;
@@ -116,7 +117,6 @@
 
 html {
   font-family: var(--ff-body);
-  line-height: 1.6;
   scroll-padding: 2rem;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -135,18 +135,6 @@ h4 {
   font-weight: 400;
   line-height: 1.2em;
 }
-h1 {
-  font-size: var(--h1);
-}
-h2 {
-  font-size: var(--h2);
-}
-h3 {
-  font-size: var(--h3);
-}
-h4 {
-  font-size: var(--h4);
-}
 p {
   font-family: var(--text-main);
   font-weight: 400;
@@ -156,9 +144,87 @@ p {
 a {
   color: var(--grey);
 }
-img {
-  border-radius: var(--border-radius-3);
-}
 header {
   margin: 1rem;
+}
+header h3 {
+  text-transform: uppercase;
+}
+.brand {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  h3 {
+    grid-column: 1/2;
+    text-transform: uppercase;
+    font-size: var(--h5);
+    font-weight: 400;
+    letter-spacing: 1.2;
+    color: var(--brown-dark);
+  }
+  nav {
+    grid-column: 2/3;
+    /* grid-row: 1/2; */
+  }
+  nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
+  .socials ul {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    grid-column: 3/4;
+  }
+  .socials img {
+    fill: var(--text-brand);
+  }
+}
+footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: center;
+  margin: 0 2rem;
+}
+footer .hours {
+  color: var(--text-main);
+}
+footer h4::after,
+footer dt::after {
+  content: ': ';
+}
+footer h3 {
+  font-size: var(--h4);
+}
+footer h4 {
+  font-size: var(--h5);
+}
+footer article section {
+  margin-top: 1rem;
+}
+footer dt,
+footer dd {
+  font-size: var(--xs-font-size);
+}
+footer address {
+  font-style: normal;
+  text-align: end;
+}
+footer address p {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 760px) {
+  footer dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  footer dt,
+  footer dd {
+    font-size: var(--sm-font-size);
+  }
 }
