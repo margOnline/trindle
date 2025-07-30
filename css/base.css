@@ -157,29 +157,41 @@ a {
 }
 header {
   margin: 1rem 0 0;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 1rem 0;
   border-bottom: 5px double var(--cement);
+}
+header img {
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }
 header h3 {
   text-transform: uppercase;
 }
 .brand {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  h3 {
-    grid-column: 1/2;
-    text-transform: uppercase;
-    font-size: var(--h6);
-    font-weight: 400;
-    letter-spacing: 1.2;
-    color: var(--brown-dark);
-  }
-  .logo {
-    justify-self: center;
-    margin-top: -10px;
-  }
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  /* display: flex;
+  flex-flow: row; */
+  /* gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr; */
+  /* h3 {
+    /* grid-column: 1/2; */
+  text-transform: uppercase;
+  font-size: var(--h6);
+  font-weight: 400;
+  letter-spacing: 1.2;
+  color: var(--brown-dark);
+  margin-left: 2rem;
+  /* .logo { */
+  /* grid-column: 2/3; */
+  /* justify-self: end; */
+  /* margin-top: -10px; */
+  /* } */
 }
 nav {
   display: none;
