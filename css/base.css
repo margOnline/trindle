@@ -156,7 +156,9 @@ a {
   color: var(--grey);
 }
 header {
-  margin: 1rem;
+  margin: 1rem 0 0;
+  padding: 1rem 0;
+  border-bottom: 5px double var(--cement);
 }
 header h3 {
   text-transform: uppercase;
@@ -295,4 +297,7 @@ footer address p {
   footer dd {
     font-size: var(--sm-font-size);
   }
+}
+.emphasis {
+  color: var(--yellow);
 }

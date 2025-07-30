@@ -7,8 +7,11 @@ h1 {
 
 @layer mobile-portrait {
   /* default card styles, no layout. Note all layout is happening in the card itself, not in the card container - these cards stack on top of each other natively */
+  .card {
+    margin-bottom: 3rem;
+  }
   .card h2 {
-    margin: 4rem 0 1rem 0;
+    margin: 2rem 0 1rem;
     font-size: var(--h3);
     text-align: center;
   }
@@ -89,12 +92,12 @@ h1 {
     min-height: 400px;
   }
   .card p {
-    grid-row: 1/2;
+    grid-row: 1/3;
     grid-column: 3/4;
     padding-top: 0;
   }
   .card p:last-of-type {
-    grid-row: 2/3;
+    grid-row: 1/3;
     grid-column: 3/4;
   }
 }
@@ -105,14 +108,14 @@ h1 {
     max-width: 1000px;
     display: flex;
     flex-flow: row wrap;
-    gap: 5rem 4%;
+    gap: 2rem 4%;
     justify-content: space-evenly;
     padding: 0 2rem 5rem 2rem;
   }
   .card {
     flex-basis: 30%;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.25fr 2fr 0.75fr;
+    grid-template-rows: 0.2fr 1fr 0.7fr;
     margin: 0;
     padding: 0;
     gap: 1rem;
@@ -126,7 +129,7 @@ h1 {
     font-size: var(--h4);
   }
   .card-image {
-    grid-row: auto;
+    grid-row: 2/3;
     grid-column: auto;
   }
   .card p {
