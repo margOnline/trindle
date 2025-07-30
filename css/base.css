@@ -163,8 +163,8 @@ header {
   border-bottom: 5px double var(--cement);
 }
 header img {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   margin: auto;
 }
 header h3 {
@@ -301,6 +301,10 @@ footer address p {
 }
 
 @media (min-width: 760px) {
+  header img {
+    width: 200px;
+    height: 200px;
+  }
   footer dl {
     display: grid;
     grid-template-columns: 1fr 1fr;
