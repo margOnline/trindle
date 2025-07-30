@@ -1,110 +1,144 @@
-@layer mobile {
-  h1 {
-    color: var(--brown);
-    text-align: center;
+h1 {
+  color: var(--brown);
+  text-align: center;
+  font-size: var(--h3);
+  margin-bottom: 3rem;
+}
+
+@layer mobile-portrait {
+  /* default card styles, no layout. Note all layout is happening in the card itself, not in the card container - these cards stack on top of each other natively */
+  .card h2 {
+    margin: 4rem 0 1rem 0;
     font-size: var(--h3);
-    margin-bottom: 3rem;
-  }
-  .page-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .grid-wrapper {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-  }
-  .image-wrapper {
-    margin: 0.5rem;
-    height: 200px;
-  }
-  .image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5%;
-    justify-self: center;
-  }
-}
-
-@media (min-width: 675px) {
-  .grid-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem 1rem;
-  }
-  h1 {
-    grid-column: 1/3;
-    grid-row: 1/2;
-  }
-  .cappuccino {
-    grid-column: 1/2;
-    grid-row: 4/5;
-  }
-  .americano {
-    grid-column: 2/3;
-    grid-row: 2/3;
-  }
-  .iced-latte {
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
-  .tea {
-    grid-column: 2/3;
-    grid-row: 4/5;
-  }
-  .image-wrapper {
-    height: 300px;
-  }
-  .croissant {
-    grid-column: 1/3;
-    grid-row: 3/4;
-    height: 400px;
-  }
-}
-
-@media (min-width: 890px) {
-  .grid-wrapper {
-    grid-template-columns: repeat(12, 1fr);
-    padding: 2rem 5rem;
-    gap: 2.2rem;
-  }
-  .image-wrapper {
-    width: auto;
-    height: auto;
-    object-fit: contain;
-  }
-  h1 {
-    grid-column: 5/9;
-    grid-row: 1/7;
-    padding: 0;
-    margin: 0;
-    align-self: center;
-    max-width: 400px;
     text-align: center;
   }
-  .bottom-left {
-    grid-column: 3/6;
-    grid-row: 7/8;
+  .card-image img {
+    min-height: 200px;
+    object-fit: cover;
+    border-radius: 0;
   }
-  .bottom-right {
-    grid-column: 7/10;
-    grid-row: 7/8;
+  .card p {
+    line-height: 1.5;
+    padding: 2rem 2rem 0rem 2rem;
+    margin: 0;
+    color: var(--brown);
   }
-  .top-left {
-    grid-column: 2/5;
+}
+/* card has 2 columns, 3 rows */
+@media (min-width: 475px) {
+  header {
+    margin-bottom: var(--xl);
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 10% 60% 30%;
+    gap: 0rem 2rem;
+    margin: 2rem auto;
+    padding: 0 2rem 0.5rem 2rem;
+    background-color: transparent;
+    border-radius: var(--radius);
+  }
+  .card h2 {
     grid-row: 1/4;
+    grid-column: 1/2;
+    writing-mode: vertical-lr;
+    border-radius: 0;
+    align-self: start;
+    margin: 0;
+    padding: 0;
   }
-  .left-middle {
-    grid-column: 1/5;
-    grid-row: 4/7;
+  .card-image {
+    grid-row: 1/4;
+    grid-column: 2/3;
   }
-  .middle-right {
-    grid-column: 10/13;
-    grid-row: 2/5;
+  .card-image img {
+    min-height: 600px;
+    border-radius: var(--radius);
   }
-  .large-middle-right {
-    grid-column: 9/12;
-    grid-row: 5/7;
+  .card p {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    background-color: var(--vanilla);
+  }
+  .card p:last-of-type {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: var(--transparent);
+  }
+}
+
+@media (min-width: 600px) {
+  .fancy-text {
+    font-size: var(--xl-font-size);
+  }
+  .card {
+    grid-template-columns: 40px 1fr 0.75fr;
+    grid-template-rows: repeat(2, minmax(25%, 50%));
+  }
+  .card h2 {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    padding-top: 0;
+  }
+  .card-image {
+    grid-row: 1/3;
+    grid-column: 2/3;
+  }
+  .card-image img {
+    min-height: 400px;
+  }
+  .card p {
+    grid-row: 1/2;
+    grid-column: 3/4;
+    padding-top: 0;
+  }
+  .card p:last-of-type {
+    grid-row: 2/3;
+    grid-column: 3/4;
+  }
+}
+
+@media (min-width: 950px) {
+  .card-container {
+    margin: 3rem auto;
+    max-width: 1000px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5rem 4%;
+    justify-content: space-evenly;
+    padding: 0 2rem 5rem 2rem;
+  }
+  .card {
+    flex-basis: 30%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr 2fr 0.75fr;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+  }
+  .card h2 {
+    grid-row: auto;
+    grid-column: auto;
+    writing-mode: unset;
+    margin: 2rem auto 0;
+    text-align: center;
+    font-size: var(--h4);
+  }
+  .card-image {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  .card p {
+    grid-row: auto;
+    grid-column: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .card p:last-of-type {
+    grid-row: auto;
+    grid-column: auto;
+    align-self: start;
+    justify-self: center;
   }
 }
