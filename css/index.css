@@ -60,11 +60,6 @@ h1 {
     border-radius: var(--radius);
   }
   .card p {
-    grid-row: 3/4;
-    grid-column: 2/3;
-    background-color: var(--vanilla);
-  }
-  .card p:last-of-type {
     grid-column: 2/3;
     grid-row: 1/2;
     background-color: var(--transparent);
@@ -99,6 +94,7 @@ h1 {
   .card p:last-of-type {
     grid-row: 1/3;
     grid-column: 3/4;
+    border: none;
   }
 }
 

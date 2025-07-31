@@ -107,15 +107,6 @@
 
   /* other variables */
   --radius: 5px;
-
-  @media (width > 760px) {
-    --fs-500: 1.25rem;
-    --fs-600: 1.5rem;
-    --fs-700: 2rem;
-    --fs-800: 3rem;
-    --fs-900: 5rem;
-    --fs-1000: 7.5rem;
-  }
 }
 .visually-hidden {
   clip: rect(0 0 0 0);
